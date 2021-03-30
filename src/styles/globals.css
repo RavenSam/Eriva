@@ -1,0 +1,6 @@
+@import "typeface-montserrat/index.css";
+@import "typeface-poppins/index.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
