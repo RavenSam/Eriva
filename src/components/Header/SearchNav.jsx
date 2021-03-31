@@ -1,21 +1,21 @@
 import React from "react"
-//import { useSpring, animated } from "react-spring"
+import { useSpring, animated } from "react-spring"
 
 export default function SearchNav({ open, setOpen }) {
    const searchOpen = open ? "opacity-1 " : " hidden opacity-0"
 
-//   const hidden = { opacity: 0, display: "none", zIndex: "-10" }
-//   const show = { opacity: 1, display: "flex", zIndex: "10" }
-  // const config = { mass: 1, tension: 120, friction: 14 }
+   const hidden = { opacity: 0, display: "none", zIndex: "-10" }
+  const show = { opacity: 1, display: "flex", zIndex: "10" }
+  const config = { mass: 1, tension: 120, friction: 14 }
 
- //  const styled = open ? { ...show, from: hidden, config } : { ...hidden, from: show, config }
+   const styled = open ? { ...show, from: hidden, config } : { ...hidden, from: show, config }
 
-  // const animation = useSpring(styled)
+ const animation = useSpring(styled)
 
    return (
       <>
-         <div
-           
+         <animated.div
+           style={animation}
             onClick={() => setOpen(false)}
             className={` bg-whiteAlpha-900 w-full p-2 flex items-center justify-center absolute top-0 left-0 h-screen`}
          >
@@ -33,7 +33,7 @@ export default function SearchNav({ open, setOpen }) {
                   Search
                </button>
             </div>
-         </div>
+         </animated.div>
       </>
    )
 }
