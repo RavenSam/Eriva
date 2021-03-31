@@ -5,7 +5,7 @@ import { Fragment } from "react"
 export default function Nav({ links }) {
    return (
       <>
-         <nav className="hidden md:flex space-x-10">
+         <nav className="hidden md:flex space-x-4">
             {links.map((link) => (
                <Fragment key={link.label}>
                   {link.child.length ? (
@@ -13,7 +13,7 @@ export default function Nav({ links }) {
                         {link.child.map((item, index) => (
                            <Link key={index} href={item.href}>
                               <a
-                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                 className="block px-2 py-2 text-sm text-gray-500 capitalize font-semibold hover:bg-gray-100 hover:text-gray-900"
                                  role="menuitem"
                               >
                                  {item.label}
@@ -23,7 +23,9 @@ export default function Nav({ links }) {
                      </DropDown>
                   ) : (
                      <Link href={link.href}>
-                        <a className="text-base font-medium text-gray-500 hover:text-gray-900">{link.label}</a>
+                        <a className=" text-sm text-gray-500 hover:text-gray-900 capitalize font-semibold">
+                           {link.label}
+                        </a>
                      </Link>
                   )}
                </Fragment>

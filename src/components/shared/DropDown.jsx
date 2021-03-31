@@ -16,7 +16,7 @@ export default function DropDown({ btnClasses = "", menuClasses = "", children, 
                   onClick={() => setShow(!show)}
                   onBlur={() => setShow(false)}
                   type="button"
-                  className={` ${btnClasses} inline-flex justify-between w-fullbg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:outline-none `}
+                  className={` ${btnClasses} inline-flex justify-between w-fullbg-white text-sm text-gray-500 capitalize font-semibold hover:bg-gray-50 focus:outline-none `}
                   id="options-menu"
                   aria-expanded="true"
                   aria-haspopup="true"
