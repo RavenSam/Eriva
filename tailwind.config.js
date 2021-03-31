@@ -1,5 +1,5 @@
 module.exports = {
-   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+    purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
    darkMode: false,
    theme: {
       extend: {
@@ -10,7 +10,6 @@ module.exports = {
          zIndex: {
             "-1": "-1",
          },
-
          colors: {
             primary: {
                50: "#4d585e",
