@@ -2,7 +2,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { MenuOutline, XOutline } from "heroicons-react"
 
-export default function MobileMenu({ links }) {
+export default function MobileMenu({ menu }) {
    const [open, setOpen] = useState(false)
 
    const menuClasses = open
@@ -29,15 +29,11 @@ export default function MobileMenu({ links }) {
         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/}
 
          <div className={`${menuClasses} absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden`}>
-            <div className="rounded-sm shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+            <div className="rounded-sm shadow-md ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                <div className="pt-5 pb-6 px-5">
                   <div className="flex items-center justify-between">
                      <div>
-                        <img
-                           className="h-8 w-auto"
-                           src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                           alt="Workflow"
-                        />
+                        <img className="h-8 w-auto" src={menu.logo} alt="Workflow" />
                      </div>
                      <div className="-mr-2">
                         <button
@@ -52,9 +48,9 @@ export default function MobileMenu({ links }) {
                   </div>
                   <div className="mt-6">
                      <nav className="grid gap-y-8">
-                        {links.map((item) => (
+                        {menu.navLinks.map((item) => (
                            <Link href={item.href} key={item.label}>
-                              <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-100">
+                              <a className="-m-3 p-3 flex items-center rounded-sm hover:bg-gray-100">
                                  <span className="ml-3 text-base font-medium text-gray-900">{item.label}</span>
                               </a>
                            </Link>

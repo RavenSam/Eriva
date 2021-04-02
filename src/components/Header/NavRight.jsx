@@ -3,7 +3,7 @@ import { ShoppingCartOutline } from "heroicons-react"
 import MobileMenu from "./MobileMenu"
 import Search from "./Search"
 
-export default function NavRight({ links, setOpenSearch, openSearch }) {
+export default function NavRight({ menu }) {
    return (
       <>
          <div className="flex items-center justify-end md:flex-1 lg:w-0">
@@ -20,7 +20,7 @@ export default function NavRight({ links, setOpenSearch, openSearch }) {
                                 MOBILE MENU
             >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/}
             <div className="ml-2 md:hidden">
-               <MobileMenu links={links} />
+               <MobileMenu menu={menu} />
             </div>
             {/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
          </div>

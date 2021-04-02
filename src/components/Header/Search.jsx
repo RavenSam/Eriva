@@ -36,7 +36,7 @@ export default function Search() {
                      >
                         <input
                            type="search"
-                           autoFocus="true"
+                           autoFocus={true}
                            className="bg-gray-200 w-9/12 rounded-sm p-3 block focus:outline-none"
                            placeholder="Search"
                         />
