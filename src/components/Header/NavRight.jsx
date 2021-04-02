@@ -11,9 +11,10 @@ export default function NavRight({ menu }) {
 
             <button
                aria-label="Shopping Cart"
-               className="bg-white rounded-sm p-2 ml-2 inline-flex items-center justify-center text-primary-500  hover:bg-gray-100 focus:outline-none "
+               className="bg-white rounded-sm relative p-2 ml-2 inline-flex items-center justify-center text-primary-500 focus:outline-none "
             >
                <ShoppingCartOutline />
+               <span className="text-xs  bg-red-600 rounded-full px-1 text-white absolute top-0 right-0">2</span>
             </button>
 
             {/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

@@ -33,7 +33,7 @@ export default function LinkParent({ link }) {
                         <a className="-m-3 p-3 flex items-start rounded-sm hover:bg-gray-50">
                            <Photograph />
                            <div className="ml-4">
-                              <p className="text-base font-medium text-gray-900">{item.label}</p>
+                              <p className="text-base font-medium text-gray-900 capitalize">{item.label}</p>
                               <p className="mt-1 text-sm text-gray-500">{item.description}</p>
                            </div>
                         </a>

@@ -1,5 +1,4 @@
-import { useState } from "react"
-import MobileMenu from "./MobileMenu"
+import Link from "next/link"
 import NavRight from "./NavRight"
 import Nav from "./Nav"
 import { isEmpty } from "lodash"
@@ -11,22 +10,28 @@ export default function Header({ menu }) {
       <>
          <div className=" bg-white w-full  duration-300 ease-in-out">
             <div className="max-w-6xl mx-auto px-4 transition duration-300 ease-in-out">
-               <div className="flex justify-between items-center  py-6 md:justify-start">
+               <div className="flex justify-between items-center  py-4 md:justify-start">
+                  {/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                WEBSITE LOGO
+                    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/}
                   <div className="flex justify-start lg:w-0 lg:flex-1 mr-3">
-                     <a href="#">
-                        <span className="sr-only">Workflow</span>
-                        <img className="h-8 w-auto sm:h-10" src={menu.logo} alt="" />
-                     </a>
+                     <Link href="/">
+                        <a>
+                           <img className="h-8 w-auto sm:h-10" src={menu.logo} alt="Logo" />
+                        </a>
+                     </Link>
                   </div>
+                  {/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
 
                   {/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                                MOBILE MENU
+                                NAVIGATION LINKS DISPLAY NONE ON SM
                     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/}
                   <Nav links={menu.navLinks} />
                   {/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
 
                   {/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                                MOBILE MENU
+                                RIGHT NAVIGATION 
+                              | SEARCH BTN | SHOPPING CART BTN | SM MENU BTN
                     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/}
                   <NavRight menu={menu} />
                   {/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
