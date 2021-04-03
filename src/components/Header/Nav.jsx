@@ -13,7 +13,7 @@ export default function Nav({ links }) {
                      <LinkParent link={link} />
                   ) : (
                      <Link href={link.href}>
-                        <a className=" text-sm text-gray-600 p-3 hover:text-gray-900 capitalize font-bold">
+                        <a className=" text-base text-gray-600 p-3 hover:text-gray-900 capitalize font-medium">
                            {link.label}
                         </a>
                      </Link>

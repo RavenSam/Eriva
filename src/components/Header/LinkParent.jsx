@@ -15,7 +15,7 @@ export default function LinkParent({ link }) {
             <a
                onMouseOver={() => setShow(true)}
                onMouseLeave={() => setShow(false)}
-               className=" text-sm text-gray-600  p-3 hover:text-gray-900 capitalize font-bold "
+               className=" text-base text-gray-600  p-3 hover:text-gray-900 capitalize font-medium "
             >
                {link?.label}
             </a>

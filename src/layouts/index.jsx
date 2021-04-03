@@ -9,8 +9,8 @@ const menu = {
          label: "categories",
          href: "#",
          child: [
-            { label: "men", href: "#", description: "All the men cloth that you want" },
-            { label: "women", href: "#", description: "Women cloth made exactly for you" },
+            { label: "men collection", href: "#", description: "All the men cloth that you want" },
+            { label: "women collection", href: "#", description: "Women cloth made exactly for you" },
          ],
       },
    ],
