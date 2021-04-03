@@ -9,15 +9,23 @@ export default function SliderImage({ slides }) {
 
    return (
       <>
-         <Swiper spaceBetween={50} slidesPerView={1} navigation loop effect="fade" pagination={{ clickable: true }}>
-            {slides.map((slide) => (
-               <SwiperSlide>
-                  <div className="h-96 bg-pink-400 flex flex-col items-center justify-center">
-                     <h1 className="text-center font-bold text-6xl">{slide.label}</h1>
-                  </div>
-               </SwiperSlide>
-            ))}
-         </Swiper>
+         <div className="sliderImage">
+            <Swiper spaceBetween={50} slidesPerView={1} navigation loop effect="fade" pagination={{ clickable: true }}>
+               {slides.map((slide) => (
+                  <SwiperSlide key={slide.label}>
+                     <div className="h-full bg-pink-400 flex flex-col items-center justify-center">
+                        <h2 className="text-center font-bold text-6xl">{slide.label}</h2>
+                     </div>
+                  </SwiperSlide>
+               ))}
+            </Swiper>
+         </div>
+
+         <style>{`
+            .sliderImage .swiper-slide{
+               height:450px;
+            }
+         `}</style>
       </>
    )
 }

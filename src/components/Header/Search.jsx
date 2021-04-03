@@ -16,7 +16,7 @@ export default function Search() {
          <button
             onClick={() => setOpenSearch(!openSearch)}
             aria-label="Search"
-            className="bg-white rounded-sm p-2 ml-2 inline-flex items-center justify-center text-gray-400 hover:text-primary-500  focus:outline-none "
+            className="bg-white rounded-sm p-2 ml-2 inline-flex items-center justify-center text-gray-400  duration-200 ease hover:text-primary-500  focus:outline-none "
          >
             <SearchOutline />
          </button>
