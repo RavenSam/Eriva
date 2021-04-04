@@ -3,8 +3,8 @@ import React from "react"
 export default function Btn({ className = "", type = "primary", h = "h1", children }) {
    const clas =
       type === "primary"
-         ? "border-primary-600 bg-primary-600 text-white hover:bg-primary-400"
-         : " text-primary-600 border-primary-600 hover:text-white btn  "
+         ? "border-none bg-gradient-to-r from-primary-300 to-primary-700 text-white primary"
+         : " text-primary-600 border-primary-600 hover:text-white secondary  "
 
    return (
       <>
@@ -15,7 +15,7 @@ export default function Btn({ className = "", type = "primary", h = "h1", childr
          </button>
 
          <style>{`
-            .btn::before{
+            .secondary::before{
                 content:"";
                 position:absolute;
                 top:50%;
@@ -24,6 +24,27 @@ export default function Btn({ className = "", type = "primary", h = "h1", childr
                 z-index:-1;
                 transition:all 0.6s ease;
             }
+
+            .primary::before{
+               content:"";
+               position:absolute;
+               height:100px;
+               width:80px;
+               background:#f3f3f3;
+               box-shadow: 0 0 10px #fff;
+               filter:blur(1px);
+               opacity:0.8;
+               top:-30px;
+               left:-50px;
+               transition:0.6s;
+               transform:rotate(20deg) translateX(-50px);
+            }
+            .primary:Hover::before{
+               transform:rotate(20deg) translateX(50px);
+               left:100%;
+               opacity:0.35;
+               width:40px;
+            }
             ${hoverEffect()[h]}
          `}</style>
       </>
@@ -31,21 +52,21 @@ export default function Btn({ className = "", type = "primary", h = "h1", childr
 }
 
 const hoverEffect = (color = "#111c22") => {
-   const h1 = `.btn::before{
+   const h1 = `.secondary::before{
                 background:${color};
                 width:0;
                 height:100%;
             }
-            .btn:hover::before{
+            .secondary:hover::before{
                 width:100%
             }`
 
-   const h2 = `.btn::before{
+   const h2 = `.secondary::before{
                 background:${color};
                 width:100%;
                 height:0;
             }
-            .btn:hover::before{
+            .secondary:hover::before{
                 height:100%
             }`
 

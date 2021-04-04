@@ -5,17 +5,22 @@
 
 /* width */
 ::-webkit-scrollbar {
-   width: 6px;
+   width: 7px;
+   
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
    background: #fff;
+  
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
    background: var(--primary-color);
+   border-radius:4px;
+   
+   
 }
 
 .swiper-pagination-bullet-active {

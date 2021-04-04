@@ -23,7 +23,8 @@ export default function CartDrawer() {
    const [quantity, setQuantity] = useState(1)
 
    const inc = () => setQuantity(+quantity + 1)
-   const dec = () => setQuantity(+quantity - 1)
+   const dec = () => quantity && setQuantity(+quantity - 1)
+
 
    return (
       <>
@@ -43,7 +44,7 @@ export default function CartDrawer() {
          <Drawer isOpen={isOpen} size="md" placement="right" onClose={onClose} finalFocusRef={btnRef}>
             <DrawerOverlay>
                <DrawerContent>
-                  <DrawerCloseButton mt=".5rem" />
+                  <DrawerCloseButton mt=".5rem"  />
                   <DrawerHeader>
                      <h2 className="text-xl font-heading font-bold">
                         Cart <span className="text-base text-gray-400">({cartContent.length})</span>
@@ -52,9 +53,9 @@ export default function CartDrawer() {
 
                   <DrawerBody>
                      <div className="drawerBody  w-full flex items-start justify-start">
-                        <img src="/images/img.jpg" alt="image" className="w-14 h-14" />
+                        <img src="/images/img.jpg" alt="image" className="w-20 h-20" />
 
-                        <div className="Product px-2 w-full">
+                        <div className="Product px-2 pl-4 w-full">
                            <div className="flex items-center justify-between">
                               <h3 className="text-gray-700 text-sm font-heading font-semibold">White shirt</h3>
 
@@ -68,23 +69,18 @@ export default function CartDrawer() {
                            </div>
 
                            <div className="flex items-center justify-between mt-4">
-                              <HStack maxW="320px">
+                              <HStack maxW="320px" border="1px solid #333">
                                  <button
-                                    className="bg-primary-600 text-white px-3 py-1 rounded-sm hover:bg-primary-400"
+                                    className="px-3 py-1 rounded-sm focus:outline-none"
                                     onClick={dec}
                                  >
                                     -
                                  </button>
-                                 <Input
-                                    isReadOnly
-                                    value={quantity}
-                                    w="50px"
-                                    textAlign="center"
-                                    borderRadius="2px"
-                                    border="none"
-                                 />
+                                 <div className="text-center" >
+                                 {quantity}
+                                 </div>
                                  <button
-                                    className="bg-primary-600 text-white px-3 py-1 rounded-sm hover:bg-primary-400"
+                                    className="px-3 py-1 rounded-sm focus:outline-none"
                                     onClick={inc}
                                  >
                                     +
@@ -100,10 +96,10 @@ export default function CartDrawer() {
 
                   <DrawerFooter>
                      <div className="flex flex-col w-full">
-                        <Btn type="secondary" className="w-full mb-3">
+                        <Btn type="secondary" className="w-full mb-2">
                            Chokout
                         </Btn>
-                        <Btn type="primary" className="w-full mb-3">
+                        <Btn type="primary" className="w-full">
                            Cart
                         </Btn>
                      </div>
@@ -114,3 +110,7 @@ export default function CartDrawer() {
       </>
    )
 }
+
+
+
+
