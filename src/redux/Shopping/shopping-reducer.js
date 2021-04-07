@@ -1,4 +1,6 @@
 import * as actionTypes from "./shopping-types";
+import { HYDRATE } from "next-redux-wrapper";
+import { addToTheCart, removeFromTheCart, adjustProductQty, setCurrentItem } from "./reducer-functions";
 
 // Dummy data
 import { products } from "dummyData";
@@ -9,42 +11,30 @@ const INITIAL_STATE = {
 	currentItem: null,
 };
 
-const shopReducer = (state = INITIAL_STATE, action) => {
+export default function shopReducer (state = INITIAL_STATE, action) {
 	switch (action.type) {
-		// ADD A PRODUCT TO THE CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		case HYDRATE:
+			return { ...state, ...action.payload };
+
+		// ADD A PRODUCT TO THE CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		case actionTypes.ADD_TO_CART:
-			// Get the item data from product arrau
-			const item = state.products.find((prod) => prod.id === action.payload.id);
-			// Check if items is in cart already
-			const inCart = state.cart.find((prod) => (prod.id === action.payload.id ? true : false));
-			return {
-				...state,
-				cart: inCart
-					? state.cart.map((item) => (item.id === action.payload.id ? { ...item, qty: item.qty + 1 } : item))
-					: [...state.cart, { ...item, qty: 1 }],
-			};
+			return addToTheCart(state, action);
 
-		// REMOVE AN ITEM FROM THE CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		// REMOVE AN ITEM FROM THE CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		case actionTypes.REMOVE_FROM_CART:
-			return {
-				...state,
-				cart: state.cart.filter((item) => item.id !== action.payload.id),
-			};
+			return removeFromTheCart(state, action);
 
-		// ADJUST QUANTITY OF AN ITEM IN THE CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		// ADJUST QUANTITY OF AN ITEM IN THE CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		case actionTypes.ADJUST_QTY:
-			return {
-				...state,
-				cart: state.cart.map((item) => (item.id === asction.id ? { ...item, qty: action.payload.qty } : item)),
-			};
+			return adjustProductQty(state, action);
 
 		// GET THE CURRENT ITEM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 		case actionTypes.LOAD_CURRENT_ITEM:
-			return { ...state, currentItem: action.payload };
+			return setCurrentItem(state, action);
 
 		default:
 			return state;
 	}
 };
 
-export default shopReducer;
+ 
