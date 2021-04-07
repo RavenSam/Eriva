@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {connect} from "react-redux"
+import { connect, useSelector } from "react-redux";
 
 // Components
 import SliderImage from "@components/Sections/SliderImage";
@@ -7,9 +7,11 @@ import SlideCards from "@components/Sections/SlideCards";
 import Card from "@components/shared/Card";
 
 // Dummy Data
-import { collections,  slides } from "dummyData";
+import { collections, slides } from "dummyData";
 
-const Home = ({products}) => {
+export default function Home() {
+   const { products } = useSelector((state) => state.shop);
+
    return (
       <>
          <div className="mt-4 mb-20 max-w-xl mx-auto">
@@ -26,12 +28,3 @@ const Home = ({products}) => {
       </>
    );
 }
-
-
-const mapStateToProps =(state)=>{
-   return{
-      products:state.shop.products
-   }
-}
-
-export default connect(mapStateToProps)(Home)

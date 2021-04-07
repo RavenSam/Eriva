@@ -1,8 +1,10 @@
 import { HeartOutline } from "heroicons-react";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "src/redux/Shopping/shopping-actions";
 
-const CardGrid = ({ item, addToCart }) => {
+export default function CardGrid({ item }) {
+	const dispatch = useDispatch();
+
 	return (
 		<div className="flex shadow-lg border border-gray-200 rounded-sm mb-8">
 			<div className="flex-none w-48 relative">
@@ -23,7 +25,7 @@ const CardGrid = ({ item, addToCart }) => {
 							Buy now
 						</button>
 						<button
-							onClick={() => addToCart(item.id)}
+							onClick={() => dispatch(addToCart(item.id))}
 							className="w-1/2 flex items-center justify-center rounded-sm border border-gray-300"
 							type="button"
 						>
@@ -41,12 +43,4 @@ const CardGrid = ({ item, addToCart }) => {
 			</div>
 		</div>
 	);
-};
-
-const mapDispatch = (dispatch) => {
-	return {
-		addToCart: (id) => dispatch(addToCart(id)),
-	};
-};
-
-export default connect(null,mapDispatch)(CardGrid);
+}
