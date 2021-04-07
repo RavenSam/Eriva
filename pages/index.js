@@ -1,26 +1,37 @@
-import SliderImage from "@components/Sections/SliderImage"
-import SlideCards from "@components/Sections/SlideCards"
-import { useState } from "react"
+import { useState } from "react";
+import {connect} from "react-redux"
 
-const slides = [
-   { label: "slide 1", img: "/images/img.jpg" },
-   { label: "slide 2", img: "/images/img.jpg" },
-   { label: "slide 3", img: "/images/img.jpg" },
-   { label: "slide 4", img: "/images/img.jpg" },
-   { label: "slide 5", img: "/images/img.jpg" },
-   { label: "slide 6", img: "/images/img.jpg" },
-   { label: "slide 7", img: "/images/img.jpg" },
-   { label: "slide 8", img: "/images/img.jpg" },
-]
+// Components
+import SliderImage from "@components/Sections/SliderImage";
+import SlideCards from "@components/Sections/SlideCards";
+import Card from "@components/shared/Card";
 
-export default function Home() {
+// Dummy Data
+import { collections,  slides } from "dummyData";
+
+const Home = ({products}) => {
    return (
       <>
+         <div className="mt-4 mb-20 max-w-xl mx-auto">
+            {products.map((product) => (
+               <Card item={product} key={product.id} />
+            ))}
+         </div>
+
          <SliderImage slides={slides} />
 
          <div className="mt-4 mb-20">
             <SlideCards slides={slides} />
          </div>
       </>
-   )
+   );
 }
+
+
+const mapStateToProps =(state)=>{
+   return{
+      products:state.shop.products
+   }
+}
+
+export default connect(mapStateToProps)(Home)

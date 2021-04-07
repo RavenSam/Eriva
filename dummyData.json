@@ -1,10 +1,64 @@
-
 {
-   
-   "collections":[
-            { "label": "men collection", "href": "#","description": "All the men cloth that you want" },
-            { "label": "women collection"," href": "#","description": "Women cloth made exactly for you" },
-         ],
+	"collections": [
+		{
+			"label": "men collection",
+			"href": "#",
+			"description": "All the men cloth that you want"
+		},
+		{
+			"label": "women collection",
+			" href": "#",
+			"description": "Women cloth made exactly for you"
+		}
+	],
 
+	"products": [
+		{
+			"id": 1,
+			"name": "Spyder Women's Prymo Down Jacket",
+			"image": "/products/women_jacket_1.jpg",
+			"category": "women",
+			"price": "22,06"
+		},
+		{
+			"id": 2,
+			"name": "Arctix Women's Petite insulated Jacket",
+			"image": "/products/women_jacket_2.jpg",
+			"category": "women",
+			"price": "22,06"
+		},
+		{
+			"id": 3,
+			"name": "Under Armour Men's Tech 2.0 1/2 Zip-Up T-Shirt",
+			"image": "/products/men_jacket_1.jpg",
+			"category": "men",
+			"price": "22,06"
+		},
+		{
+			"id": 4,
+			"name": "Silver Buffalo Friends Central Perk Oversized Ceramic Coffee Mug for Cappuccino, Latte, Hot Cocoa, Soup Mug or Cereal, 24 Oz, Black",
+			"image": "/products/mug_1.jpg",
+			"category": "Kitchen & Entretaining",
+			"price": "22,06"
+		},
+		{
+			"id": 5,
+			"name": "Silver Buffalo Friends Central Perk Ceramic Coffee Mug for Cappuccino, Latte or Hot Tea, 14 Oz, Black",
+			"image": "/products/women_jacket_2.jpg",
+			"image": "/products/mug_2.jpg",
+			"category": "Kitchen & Entretaining",
+			"price": "22,06"
+		}
+	],
+
+	"slides": [
+		{ "label": "slide 1", "img": "/images/img.jpg" },
+		{ "label": "slide 2", "img": "/images/img.jpg" },
+		{ "label": "slide 3", "img": "/images/img.jpg" },
+		{ "label": "slide 4", "img": "/images/img.jpg" },
+		{ "label": "slide 5", "img": "/images/img.jpg" },
+		{ "label": "slide 6", "img": "/images/img.jpg" },
+		{ "label": "slide 7", "img": "/images/img.jpg" },
+		{ "label": "slide 8", "img": "/images/img.jpg" }
+	]
 }
-
