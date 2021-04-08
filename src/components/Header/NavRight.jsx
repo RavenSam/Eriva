@@ -1,7 +1,7 @@
 import React from "react"
 import MobileMenu from "./MobileMenu"
 import Search from "./Search"
-import CartDrawer from "./CartDrawer"
+import CartDrawer from "./CartDrawer/index"
 
 export default function NavRight({ menu }) {
    return (

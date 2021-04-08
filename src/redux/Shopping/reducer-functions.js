@@ -12,7 +12,6 @@ export const addToTheCart = (state, action) => {
 	};
 };
 
-
 // REMOVE AN ITEM FROM THE CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export const removeFromTheCart = (state, action) => {
 	return {
@@ -21,16 +20,13 @@ export const removeFromTheCart = (state, action) => {
 	};
 };
 
-
-
 // ADJUST QUANTITY OF AN ITEM IN THE CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export const adjustProductQty = (state, action) => {
 	return {
 		...state,
-		cart: state.cart.map((item) => (item.id === asction.id ? { ...item, qty: action.payload.qty } : item)),
+		cart: state.cart.map((item) => (item.id === action.payload.id ? { ...item, qty: action.payload.qty } : item)),
 	};
 };
-
 
 // GET THE CURRENT ITEM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export const setCurrentItem = (state, action) => {
