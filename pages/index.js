@@ -12,6 +12,9 @@ import { collections, slides } from "dummyData";
 export default function Home() {
    const { products } = useSelector((state) => state.shop);
 
+
+
+
    return (
       <>
          <div className="mt-4 mb-20 max-w-xl mx-auto">
@@ -28,3 +31,5 @@ export default function Home() {
       </>
    );
 }
+
+

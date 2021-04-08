@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 import { DrawerFooter } from "@chakra-ui/react";
 
@@ -18,13 +19,13 @@ export default function DrawerFoot({ cart }) {
 
 		setTotalItems(items.toFixed(2));
 		setTotalPrice(price.toFixed(2));
-	}, [cart,totalItems, totalPrice]);
+	}, [cart, totalItems, totalPrice]);
 
 	return (
 		<>
 			<DrawerFooter>
 				<div className="flex flex-col w-full">
-					<ul className=" w-full mb-4 text-base md:text-xl">
+					<ul className=" w-full mb-4 text-base md:text-lg">
 						<li className="flex items-center justify-between mb-2">
 							<span>Subtotal</span>
 							<span>${totalPrice}</span>
@@ -32,7 +33,7 @@ export default function DrawerFoot({ cart }) {
 
 						<li className="flex items-center justify-between mb-2">
 							<span>Shipping</span>
-							<span>FREE</span>
+							<span className="font-bold">FREE</span>
 						</li>
 
 						<hr className="my-2 md:my-4" />
@@ -43,12 +44,21 @@ export default function DrawerFoot({ cart }) {
 						</li>
 					</ul>
 
-					<Btn type="secondary" className="w-full mb-2">
-						Checkout
-					</Btn>
-					<Btn type="primary" className="w-full">
-						Cart
-					</Btn>
+					<Link href="/checkout">
+						<a>
+							<Btn type="primary" className="w-full mb-2 capitalize">
+								Proceed to Checkout
+							</Btn>
+						</a>
+					</Link>
+
+					<Link href="/cart">
+						<a>
+							<Btn type="secondary" className="w-full capitalize">
+								See Cart
+							</Btn>
+						</a>
+					</Link>
 				</div>
 			</DrawerFooter>
 		</>
