@@ -6,7 +6,7 @@ export default function MobileMenu({ menu }) {
    const [open, setOpen] = useState(false)
 
    const menuClasses = open
-      ? " duration-200 ease-out opacity-100 scale-100 z-1"
+      ? " duration-200 ease-out opacity-100 scale-100 z-10"
       : " duration-100 ease-in opacity-0 scale-95 -z-1"
    return (
       <>

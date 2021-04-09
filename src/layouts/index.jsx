@@ -7,7 +7,7 @@ import { menu } from "dummyData";
 export default function Default({ children }) {
 	return (
 		<>
-			<div className="font-body">
+			
 				<NextNprogress
 					options={{ showSpinner: false }}
 					color="#111c22"
@@ -15,7 +15,7 @@ export default function Default({ children }) {
 				/>
 				<Header menu={menu} />
 				{children}
-			</div>
+			
 		</>
 	);
 }
