@@ -48,14 +48,14 @@ export default function ProductDetails({ product }) {
 				<Menu>
 					<MenuButton
 						as={Button}
-						_focus={{ outline: "none" }}
+						_focus={{ outline: "none", bg:"gray.50" }}
 						rightIcon={<ChevronDownOutline />}
 					>
 						Size
 					</MenuButton>
 					<MenuList>
 						<MenuItem
-							_hover={{ outline: "none", bg: "gray.100" }}
+							_hover={{ outline: "none", bg: "gray.50" }}
 							_focus={{ outline: "none" }}
 						>
 							Size 1
