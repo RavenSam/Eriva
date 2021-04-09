@@ -8,6 +8,7 @@ import { wrapper } from "src/redux/store";
 import "typeface-montserrat/index.css";
 import "typeface-poppins/index.css";
 import "src/styles/index.css";
+import "react-image-gallery/styles/css/image-gallery.css"
 
 import "swiper/swiper-bundle.min.css";
 
