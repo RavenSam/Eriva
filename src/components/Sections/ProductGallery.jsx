@@ -16,10 +16,10 @@ export default function ProductGallery({gallery}) {
 
 	return (
 		<>
-			<div className="">
-				<div className="img-container w-full relative">
+			<div className=" flex flex-col items-center justify-center">
+				<div className="img-container relative">
 					<div id="lens" className="w-32 h-32 z-2 absolute hidden border-2 border-black"></div>
-					<img id="featured" src={hovered} style={{maxHeight:"80vh"}} className="object-cover cursor-pointer mx-auto max-w-full" />
+					<img id="featured" src={hovered} style={{maxHeight:"80vh"}} className="object-cover cursor-pointer" />
 				</div>
 
 				<div id="slide-wrapper" className="flex items-center">
