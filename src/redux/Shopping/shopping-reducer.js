@@ -28,10 +28,6 @@ export default function shopReducer (state = INITIAL_STATE, action) {
 		case actionTypes.ADJUST_QTY:
 			return adjustProductQty(state, action);
 
-		// GET THE CURRENT ITEM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-		case actionTypes.LOAD_CURRENT_ITEM:
-			return setCurrentItem(state, action);
-
 		default:
 			return state;
 	}

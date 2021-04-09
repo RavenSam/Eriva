@@ -5,18 +5,25 @@ import { products } from "dummyData";
 
 // Components
 import ProductGallery from "@components/Sections/ProductGallery";
+import ProductDetails from "@components/Sections/ProductDetails";
+
+
 
 export default function Product({ product }) {
+
+	
+
+
 	return (
 		<>
 			<Container maxW="container.xl">
-				<h1 className="text-2xl">Product</h1>
-
 				<SimpleGrid columns={[1, null, null, 2]} spacing="10px">
-					<Box bg="tomato" minH="100px">
-						<ProductGallery />
+					<Box  minH="100px">
+						<ProductGallery gallery={product.gallery} />
 					</Box>
-					<Box bg="tomato" minH="100px"></Box>
+					<Box  minH="100px">
+						<ProductDetails product={product} />
+					</Box>
 				</SimpleGrid>
 			</Container>
 		</>

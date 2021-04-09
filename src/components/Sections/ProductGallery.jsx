@@ -2,17 +2,10 @@ import { useEffect, useState, useRef } from "react";
 import { ChevronLeftOutline, ChevronRightOutline } from "heroicons-react";
 import imageZoom from "src/utils/imageZoom";
 
-const images = [
-	{ src: "/products/shoe1.jpg" },
-	{ src: "/products/shoe2.jpg" },
-	{ src: "/products/shoe3.jpg" },
-	{ src: "/products/shoe1.jpg" },
-	{ src: "/products/shoe2.jpg" },
-	{ src: "/products/shoe3.jpg" },
-];
 
-export default function ProductGallery() {
-	const [hovered, setHovered] = useState(images[0].src);
+
+export default function ProductGallery({gallery}) {
+	const [hovered, setHovered] = useState(gallery[0].src);
 
 	const scrollLeft = () => (document.getElementById("slider").scrollLeft -= 180);
 	const scrollRight = () => (document.getElementById("slider").scrollLeft += 180);
@@ -23,7 +16,7 @@ export default function ProductGallery() {
 
 	return (
 		<>
-			<div className="p-4">
+			<div className="">
 				<div className="img-container w-full relative">
 					<div id="lens" className="w-32 h-32 z-2 absolute border-2 border-black"></div>
 					<img id="featured" src={hovered} className="object-cover cursor-pointer w-full" />
@@ -38,7 +31,7 @@ export default function ProductGallery() {
 					</button>
 
 					<div id="slider" className="flex flex-nowrap overflow-x-auto w-full scroll">
-						{images.map((image, index) => (
+						{gallery.map((image, index) => (
 							<img
 								onMouseEnter={changeFeatured}
 								key={index}

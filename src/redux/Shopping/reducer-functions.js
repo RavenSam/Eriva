@@ -28,7 +28,3 @@ export const adjustProductQty = (state, action) => {
 	};
 };
 
-// GET THE CURRENT ITEM >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-export const setCurrentItem = (state, action) => {
-	return { ...state, currentItem: action.payload };
-};
