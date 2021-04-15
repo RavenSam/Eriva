@@ -41,13 +41,13 @@
 			"id": 1,
 			"name": "Spyder Women's Prymo Down Jacket",
 			"image": "/products/women_jacket_1.jpg",
-			"gallery":[
-				{"src":"/products/women_jacket_1.jpg"},
-				{"src":"/products/women_jacket_1.jpg"},
-				{"src":"/products/women_jacket_1.jpg"},
-				{"src":"/products/women_jacket_1.jpg"},
-				{"src":"/products/women_jacket_1.jpg"},
-				{"src":"/products/women_jacket_1.jpg"}
+			"gallery": [
+				{ "src": "/products/women_jacket_1.jpg" },
+				{ "src": "/products/women_jacket_1.jpg" },
+				{ "src": "/products/women_jacket_1.jpg" },
+				{ "src": "/products/women_jacket_1.jpg" },
+				{ "src": "/products/women_jacket_1.jpg" },
+				{ "src": "/products/women_jacket_1.jpg" }
 			],
 			"category": "women",
 			"price": 22.99
@@ -56,13 +56,13 @@
 			"id": 2,
 			"name": "Arctix Women's Petite insulated Jacket",
 			"image": "/products/women_jacket_2.jpg",
-			"gallery":[
-				{"src":"/products/women_jacket_2.jpg"},
-				{"src":"/products/women_jacket_2.jpg"},
-				{"src":"/products/women_jacket_2.jpg"},
-				{"src":"/products/women_jacket_2.jpg"},
-				{"src":"/products/women_jacket_2.jpg"},
-				{"src":"/products/women_jacket_2.jpg"}
+			"gallery": [
+				{ "src": "/products/women_jacket_2.jpg" },
+				{ "src": "/products/women_jacket_2.jpg" },
+				{ "src": "/products/women_jacket_2.jpg" },
+				{ "src": "/products/women_jacket_2.jpg" },
+				{ "src": "/products/women_jacket_2.jpg" },
+				{ "src": "/products/women_jacket_2.jpg" }
 			],
 			"category": "women",
 			"price": 22.99
@@ -71,13 +71,13 @@
 			"id": 3,
 			"name": "Under Armour Men's Tech 2.0 1/2 Zip-Up T-Shirt",
 			"image": "/products/men_jacket_1.jpg",
-			"gallery":[
-				{"src":"/products/men_jacket_1.jpg"},
-				{"src":"/products/men_jacket_1.jpg"},
-				{"src":"/products/men_jacket_1.jpg"},
-				{"src":"/products/men_jacket_1.jpg"},
-				{"src":"/products/men_jacket_1.jpg"},
-				{"src":"/products/men_jacket_1.jpg"}
+			"gallery": [
+				{ "src": "/products/men_jacket_1.jpg" },
+				{ "src": "/products/men_jacket_1.jpg" },
+				{ "src": "/products/men_jacket_1.jpg" },
+				{ "src": "/products/men_jacket_1.jpg" },
+				{ "src": "/products/men_jacket_1.jpg" },
+				{ "src": "/products/men_jacket_1.jpg" }
 			],
 			"category": "men",
 			"price": 22.99
@@ -86,13 +86,13 @@
 			"id": 4,
 			"name": "Silver Buffalo Friends Central Perk Oversized Ceramic Coffee Mug for Cappuccino, Latte, Hot Cocoa, Soup Mug or Cereal, 24 Oz, Black",
 			"image": "/products/mug_1.jpg",
-			"gallery":[
-				{"src":"/products/mug_1.jpg"},
-				{"src":"/products/mug_1.jpg"},
-				{"src":"/products/mug_1.jpg"},
-				{"src":"/products/mug_1.jpg"},
-				{"src":"/products/mug_1.jpg"},
-				{"src":"/products/mug_1.jpg"}
+			"gallery": [
+				{ "src": "/products/mug_1.jpg" },
+				{ "src": "/products/mug_1.jpg" },
+				{ "src": "/products/mug_1.jpg" },
+				{ "src": "/products/mug_1.jpg" },
+				{ "src": "/products/mug_1.jpg" },
+				{ "src": "/products/mug_1.jpg" }
 			],
 			"category": "Kitchen & Entretaining",
 			"price": 22.99
@@ -101,13 +101,13 @@
 			"id": 5,
 			"name": "Silver Buffalo Friends Central Perk Ceramic Coffee Mug for Cappuccino, Latte or Hot Tea, 14 Oz, Black",
 			"image": "/products/mug_2.jpg",
-			"gallery":[
-				{"src":"/products/mug_2.jpg"},
-				{"src":"/products/mug_2.jpg"},
-				{"src":"/products/mug_2.jpg"},
-				{"src":"/products/mug_2.jpg"},
-				{"src":"/products/mug_2.jpg"},
-				{"src":"/products/mug_2.jpg"}
+			"gallery": [
+				{ "src": "/products/mug_2.jpg" },
+				{ "src": "/products/mug_2.jpg" },
+				{ "src": "/products/mug_2.jpg" },
+				{ "src": "/products/mug_2.jpg" },
+				{ "src": "/products/mug_2.jpg" },
+				{ "src": "/products/mug_2.jpg" }
 			],
 			"category": "Kitchen & Entretaining",
 			"price": 22.99
@@ -123,5 +123,28 @@
 		{ "label": "slide 6", "img": "/images/img.jpg" },
 		{ "label": "slide 7", "img": "/images/img.jpg" },
 		{ "label": "slide 8", "img": "/images/img.jpg" }
+	],
+
+	"showcases": [
+		{
+			"id": 1,
+			"text": "Lorem ipsum, dolor sit, amet consectetur adipisicing elit.",
+			"image": "/images/watch1.jpg"
+		},
+		{
+			"id": 2,
+			"text": "Lorem ipsum, dolor sit, amet consectetur adipisicing elit.",
+			"image": "/images/watch2.jpg"
+		},
+		{
+			"id": 3,
+			"text": "Lorem ipsum, dolor sit, amet consectetur adipisicing elit.",
+			"image": "/images/watch3.jpg"
+		},
+		{
+			"id": 4,
+			"text": "Lorem ipsum, dolor sit, amet consectetur adipisicing elit.",
+			"image": "/images/watch4.jpg"
+		}
 	]
 }
