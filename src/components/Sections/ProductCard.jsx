@@ -1,10 +1,17 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { HeartOutline, ZoomInOutline, ShoppingCartOutline } from "heroicons-react"
+import { HeartOutline, ZoomInOutline, ShoppingCartOutline } from "heroicons-react";
+import { useTransition, animated } from "react-spring";
 
 export default function Productcard() {
 	const [hovered, setHovered] = useState(false);
+
+	const transition = useTransition(hovered, {
+		from: { x:30, opacity: 0 },
+		enter: { x:0,opacity: 1 },
+		leave: { x:30,opacity: 0 },
+	});
 
 	return (
 		<>
@@ -22,28 +29,43 @@ export default function Productcard() {
 					/>
 				</figure>
 
-				<div className="absolute top-2 right-2 flex flex-col items-center justify-center">
-					<button aria-label="add to card" className="bg-primary-600 rounded-full w-10 h-10 text-white mb-2 ">
-					<ShoppingCartOutline className="mx-auto" />
-					</button>
+				{transition((style, item) =>
+					item ? (
+						<animated.div style={style} className="absolute top-2 right-2 flex flex-col items-center justify-center">
+							<button
+								aria-label="add to card"
+								className="bg-primary-600 rounded-full w-10 h-10 text-white mb-2 "
+							>
+								<ShoppingCartOutline className="mx-auto" />
+							</button>
 
-					<button aria-label="quick view" className="bg-primary-600 rounded-full w-10 h-10 text-white mb-2 ">
-					<ZoomInOutline className="mx-auto" />
-					</button>
+							<button
+								aria-label="quick view"
+								className="bg-primary-600 rounded-full w-10 h-10 text-white mb-2 "
+							>
+								<ZoomInOutline className="mx-auto" />
+							</button>
 
-					<button aria-label="white list" className="bg-primary-600 rounded-full w-10 h-10 text-white mb-2 ">
-					<HeartOutline className="mx-auto" />
-					</button>
-				</div>
+							<button
+								aria-label="white list"
+								className="bg-primary-600 rounded-full w-10 h-10 text-white mb-2 "
+							>
+								<HeartOutline className="mx-auto" />
+							</button>
+						</animated.div>
+					) : (
+						null
+					)
+				)}
 
 				<div className="content p-4">
 					<Link href="#">
-						<a className="text-lg capitalize font-semibold">Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</a>
+						<a className="text-lg capitalize font-semibold">
+							Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+						</a>
 					</Link>
 
-					
-						<h3 className="font-bold py-3 px-5">$33.99</h3>
-					
+					<h3 className="font-bold py-3 px-5">$33.99</h3>
 				</div>
 			</div>
 		</>
