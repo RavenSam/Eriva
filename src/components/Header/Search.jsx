@@ -5,6 +5,16 @@ import { SearchOutline } from "heroicons-react";
 export default function Search() {
   const [openSearch, setOpenSearch] = useState(false);
 
+  const handleOpen = () => {
+    setOpenSearch(!openSearch);
+
+    if (openSearch) {
+      document.body.style.overflow = "auto";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  };
+
   const transition = useTransition(openSearch, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -14,7 +24,7 @@ export default function Search() {
   return (
     <>
       <button
-        onClick={() => setOpenSearch(!openSearch)}
+        onClick={handleOpen}
         aria-label="Search"
         className="bg-white rounded-sm p-2 ml-2 inline-flex items-center justify-center text-gray-400  duration-200 ease hover:text-primary-500  focus:outline-none "
       >
@@ -26,7 +36,7 @@ export default function Search() {
           item && (
             <animated.div
               style={style}
-              onClick={() => setOpenSearch(false)}
+              onClick={handleOpen}
               className="bg-whiteAlpha-900 w-full p-2  items-center justify-center absolute top-0 left-0 h-screen flex z-10 "
             >
               <animated.div
