@@ -3,14 +3,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeartOutline, ZoomInOutline, ShoppingCartOutline } from "heroicons-react";
 import { useTransition, animated } from "react-spring";
+import { addToCart } from "src/redux/Shopping/shopping-actions";
+import { useDispatch } from "react-redux";
+import { useToast } from "@chakra-ui/react";
 
-export default function Productcard() {
+export default function Productcard(id = 1) {
 	const [hovered, setHovered] = useState(false);
+	const dispatch = useDispatch();
+	const toast = useToast();
+
+	const handleAdd = (id) => {
+		dispatch(addToCart(id));
+		toast({
+			position: "top-left",
+			title: "Added to cart",
+			status: "success",
+			duration: 9000,
+			isClosable: true,
+		});
+	};
 
 	const transition = useTransition(hovered, {
-		from: { x:30, opacity: 0 },
-		enter: { x:0,opacity: 1 },
-		leave: { x:30,opacity: 0 },
+		from: { x: 30, opacity: 0 },
+		enter: { x: 0, opacity: 1 },
+		leave: { x: 30, opacity: 0 },
 	});
 
 	return (
@@ -31,8 +47,12 @@ export default function Productcard() {
 
 				{transition((style, item) =>
 					item ? (
-						<animated.div style={style} className="absolute top-2 right-2 flex flex-col items-center justify-center">
+						<animated.div
+							style={style}
+							className="absolute top-2 right-2 flex flex-col items-center justify-center"
+						>
 							<button
+								onClick={() => handleAdd(id)}
 								aria-label="add to card"
 								className="bg-primary-600 rounded-full w-10 h-10 text-white mb-2 "
 							>
@@ -53,9 +73,7 @@ export default function Productcard() {
 								<HeartOutline className="mx-auto" />
 							</button>
 						</animated.div>
-					) : (
-						null
-					)
+					) : null
 				)}
 
 				<div className="content p-4">

@@ -1,3 +1,4 @@
+
 // ADD A PRODUCT TO THE CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export const addToTheCart = (state, action) => {
 	// Get the item data from product arrau
