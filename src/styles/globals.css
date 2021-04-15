@@ -1,28 +1,30 @@
 :root {
-   --primary-color: #000;
-   --swiper-navigation-size: 25px !important;
+	--primary-color: #000;
+	--swiper-navigation-size: 25px !important;
 }
 
 /* width */
 ::-webkit-scrollbar {
-   width: 6px;
+	width: 6px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-   background: #fff;
-
+	background: #fff;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-   background: var(--primary-color);
+	background: var(--primary-color);
 }
 
 .swiper-pagination-bullet-active {
-   background: var(--primary-color) !important;
+	background: var(--primary-color) !important;
 }
 .swiper-button-next,
 .swiper-button-prev {
-   color: var(--primary-color) !important;
+	color: var(--primary-color) !important;
+}
+.featuredImage div {
+	display: block !important;
 }

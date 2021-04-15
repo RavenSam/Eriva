@@ -1,6 +1,12 @@
 import React from "react";
 
-export default function Btn({ className = "", type = "primary", h = "h1", children }) {
+export default function Btn({
+  className = "",
+  type = "primary",
+  h = "h1",
+  children,
+  onClick,
+}) {
   const clas =
     type === "primary"
       ? "border-none bg-gradient-to-r tracking-wide from-primary-300 to-primary-700 text-white primary"
@@ -9,6 +15,7 @@ export default function Btn({ className = "", type = "primary", h = "h1", childr
   return (
     <>
       <button
+        onClick={onClick}
         className={` ${className} ${clas} relative overflow-hidden border-2 px-6 py-3 rounded-sm font-semibold font-heading`}
       >
         {children}

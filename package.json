@@ -20,6 +20,7 @@
     "nextjs-progressbar": "^0.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-image-magnify": "^2.7.4",
     "react-redux": "^7.2.3",
     "react-spring": "^9.0.0",
     "redux": "^4.0.5",
@@ -29,6 +30,7 @@
     "typeface-poppins": "^1.1.13"
   },
   "devDependencies": {
+    "@tailwindcss/jit": "^0.1.18",
     "autoprefixer": "^10.2.5",
     "postcss": "^8.2.9",
     "redux-devtools-extension": "^2.13.9",
