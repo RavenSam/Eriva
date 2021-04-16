@@ -2,15 +2,13 @@ import {
 	Breadcrumb,
 	BreadcrumbItem,
 	BreadcrumbLink,
-	BreadcrumbSeparator,
 } from "@chakra-ui/react";
-import { ChevronRightOutline } from "heroicons-react"
 
 export default function ProductBreadCrumb({ category }) {
 	return (
-		<Breadcrumb spacing="2px" separator={<ChevronRightOutline color="gray.500" />}>
+		<Breadcrumb spacing="2px" fontSize="13px">
 			<BreadcrumbItem>
-				<BreadcrumbLink href="#">Product</BreadcrumbLink>
+				<BreadcrumbLink href="#" >Product</BreadcrumbLink>
 			</BreadcrumbItem>
 
 			<BreadcrumbItem>

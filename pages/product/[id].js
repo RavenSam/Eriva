@@ -5,8 +5,7 @@ import { useRouter } from "next/router";
 import { products } from "dummyData";
 
 // Components
-import ProductGallery from "@components/Sections/ProductGallery";
-import ProductDetails from "@components/Sections/ProductDetails";
+import ProductDetails from "@components/ProductDetails";
 import ProductBreadCrumb from "@components/shared/ProductBreadCrumb";
 
 export default function Product({ product }) {
@@ -16,7 +15,6 @@ export default function Product({ product }) {
 	// initially until getStaticProps() finishes running
 	if (router.isFallback) return <p className="text-center">Loading...</p>;
 
-
 	return (
 		<>
 			<Container maxW="container.xl">
@@ -24,14 +22,9 @@ export default function Product({ product }) {
 					<ProductBreadCrumb category={product.category} />
 				</div>
 
-				<SimpleGrid columns={[1, null, null, 2]} spacing="10px">
-					<Box minH="100px">
-						<ProductGallery gallery={product.gallery} />
-					</Box>
-					<Box minH="100px">
-						<ProductDetails product={product} />
-					</Box>
-				</SimpleGrid>
+				<div className="mt-10">
+					<ProductDetails product={product} />
+				</div>
 			</Container>
 		</>
 	);

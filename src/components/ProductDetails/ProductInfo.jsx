@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownOutline } from "heroicons-react";
 
-export default function ProductDetails({ product }) {
+export default function ProductInfo({ product }) {
 	const [qty, setQty] = useState(1);
 	const dispatch = useDispatch();
 	const toast = useToast()
