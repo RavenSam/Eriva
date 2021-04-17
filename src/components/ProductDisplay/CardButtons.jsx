@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { HeartOutline, ArrowsExpandOutline, ShoppingCartOutline } from "heroicons-react";
 import { useDispatch } from "react-redux";
+import { useTransition, animated } from "react-spring";
 import { addToCart } from "src/redux/Shopping/shopping-actions";
 import { useToast } from "@chakra-ui/react";
 
 import ProductModal from "./ProductModal/index";
 
-export default function CardButtons({ id, hovered}) {
+export default function CardButtons({ id, hovered }) {
 	const dispatch = useDispatch();
 	const toast = useToast();
 
@@ -21,11 +22,20 @@ export default function CardButtons({ id, hovered}) {
 		});
 	};
 
-
+	const transition = useTransition(hovered, {
+		from: { x: 30, opacity: 0 },
+		enter: { x: 0, opacity: 1 },
+		leave: { x: 30, opacity: 0 },
+	});
 
 	return (
 		<>
-			
+			{transition((style, item) =>
+				item ? (
+					<animated.div
+						style={style}
+						className="absolute top-2 right-2 flex flex-col items-center justify-center"
+					>
 						<button
 							onClick={() => handleAdd(id)}
 							aria-label="add to card"
@@ -42,7 +52,11 @@ export default function CardButtons({ id, hovered}) {
 						>
 							<HeartOutline className="mx-auto" />
 						</button>
-			
+					</animated.div>
+				) : (
+					""
+				)
+			)}
 		</>
 	);
 }
