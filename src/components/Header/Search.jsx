@@ -37,12 +37,12 @@ export default function Search() {
             <animated.div
               style={style}
               onClick={handleOpen}
-              className="bg-whiteAlpha-900 w-full p-2  items-center justify-center absolute top-0 left-0 h-screen flex z-10 "
+              className="bg-whiteAlpha-600 w-full p-2 bdf items-center justify-center absolute top-0 left-0 h-screen flex z-10 "
             >
               <animated.div
                 style={style}
                 onClick={(e) => e.stopPropagation()}
-                className=" delay-100 duration-500 search flex items-center justify-center flex-wrap mx-auto w-full max-w-sm"
+                className=" delay-100 duration-500 shadow-xl search flex items-center justify-center flex-wrap mx-auto w-full max-w-sm"
               >
                 <input
                   type="search"

@@ -28,3 +28,6 @@
 .featuredImage div {
 	display: block !important;
 }
+.bdf {
+	backdrop-filter: blur(8px);
+}
