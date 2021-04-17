@@ -41,8 +41,9 @@ export default function Search() {
             >
               <animated.div
                 style={style}
+                
                 onClick={(e) => e.stopPropagation()}
-                className=" delay-100 duration-500 shadow-xl search flex items-center justify-center flex-wrap mx-auto w-full max-w-sm"
+                className="shadow-1 delay-100 duration-500 search flex items-center justify-center flex-wrap mx-auto w-full max-w-sm"
               >
                 <input
                   type="search"

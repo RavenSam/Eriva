@@ -4,10 +4,11 @@ import { useDispatch } from "react-redux";
 import { useTransition, animated } from "react-spring";
 import { addToCart } from "src/redux/Shopping/shopping-actions";
 import { useToast } from "@chakra-ui/react";
+import ToastRender from "@components/shared/ToastRender";
 
 import ProductModal from "./ProductModal/index";
 
-export default function CardButtons({ id, hovered }) {
+export default function CardButtons({ product, hovered, setHovered,setMOpen }) {
 	const dispatch = useDispatch();
 	const toast = useToast();
 
@@ -15,10 +16,7 @@ export default function CardButtons({ id, hovered }) {
 		dispatch(addToCart(id));
 		toast({
 			position: "top-left",
-			title: "Added to cart",
-			status: "success",
-			duration: 9000,
-			isClosable: true,
+			render: () => <ToastRender>Added to the cart</ToastRender>,
 		});
 	};
 
@@ -37,14 +35,14 @@ export default function CardButtons({ id, hovered }) {
 						className="absolute top-2 right-2 flex flex-col items-center justify-center"
 					>
 						<button
-							onClick={() => handleAdd(id)}
+							onClick={() => handleAdd(product.id)}
 							aria-label="add to card"
 							className="bg-primary-600 rounded-full w-10 h-10 text-white mb-2 focus:outline-none"
 						>
 							<ShoppingCartOutline className="mx-auto" />
 						</button>
 
-						<ProductModal />
+						<ProductModal product={product}  setHovered={setHovered}  setMOpen={setMOpen} />
 
 						<button
 							aria-label="white list"

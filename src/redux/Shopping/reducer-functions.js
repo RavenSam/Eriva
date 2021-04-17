@@ -2,14 +2,14 @@
 // ADD A PRODUCT TO THE CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export const addToTheCart = (state, action) => {
 	// Get the item data from product arrau
-	const item = state.products.find((prod) => prod.id === action.payload.id);
+	// const item = state.products.find((prod) => prod.id === action.payload.id);
 	// Check if items is in cart already
 	const inCart = state.cart.find((prod) => (prod.id === action.payload.id ? true : false));
 	return {
 		...state,
 		cart: inCart
-			? state.cart.map((item) => (item.id === action.payload.id ? { ...item, qty: item.qty + 1 } : item))
-			: [...state.cart, { ...item, qty: 1 }],
+			? state.cart.map((item) => (item.id === action.payload.id ? { id:item.id, qty: item.qty + 1 } : item))
+			: [...state.cart, { id:action.payload.id, qty: 1 }],
 	};
 };
 

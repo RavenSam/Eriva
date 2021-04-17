@@ -1,23 +1,34 @@
 import { HeartOutline, ArrowsExpandOutline, ShoppingCartOutline } from "heroicons-react";
+import { useEffect } from "react";
 
 import {
 	Modal,
 	ModalOverlay,
 	ModalContent,
 	ModalHeader,
-	ModalFooter,
 	ModalBody,
 	ModalCloseButton,
-	useDisclosure 
+	useDisclosure,
 } from "@chakra-ui/react";
 
-export default function ProductModal() {
-	const { isOpen, onOpen, onClose } = useDisclosure()
+export default function ProductModal({ product, setHovered, setMOpen }) {
+	const { isOpen, onOpen, onClose } = useDisclosure();
+
+	const handleOpen = () => {
+		setMOpen(true);
+		onOpen();
+	};
+
+	const handleClose = () => {
+		setMOpen(false);
+		setHovered(false)
+		onClose();
+	};
 
 	return (
 		<>
 			<button
-				onClick={onOpen}
+				onClick={handleOpen}
 				aria-label="quick view"
 				className="bg-primary-600 rounded-full w-10 h-10 text-white mb-2 focus:outline-none"
 			>
@@ -25,14 +36,14 @@ export default function ProductModal() {
 			</button>
 
 			<Modal isOpen={isOpen} onClose={onClose} size="3xl">
-				<ModalOverlay />
+				<ModalOverlay onClick={handleClose} />
 
-				<ModalContent>
+				<ModalContent borderRadius="2px">
 					<ModalHeader>Product</ModalHeader>
-					<ModalCloseButton _focus={{ outline: "none" }} />
+					<ModalCloseButton _focus={{ outline: "none" }} onClick={handleClose} />
 
 					<ModalBody>
-						<h1 className="text-3xl">Product</h1>
+						<h1 className="text-2xl">{product.title}</h1>
 					</ModalBody>
 				</ModalContent>
 			</Modal>

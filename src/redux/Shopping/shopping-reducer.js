@@ -1,17 +1,17 @@
 import * as actionTypes from "./shopping-types";
 import { HYDRATE } from "next-redux-wrapper";
-import { addToTheCart, removeFromTheCart, adjustProductQty, setCurrentItem } from "./reducer-functions";
-
-// Dummy data
-import { products } from "dummyData";
+import {
+	addToTheCart,
+	removeFromTheCart,
+	adjustProductQty,
+	setCurrentItem,
+} from "./reducer-functions";
 
 const INITIAL_STATE = {
-	products, // array of object  each product {id, name, image, category, price}
 	cart: [], // {id, name, image, category, price, qty}
-	currentItem: null,
 };
 
-export default function shopReducer (state = INITIAL_STATE, action) {
+export default function shopReducer(state = INITIAL_STATE, action) {
 	switch (action.type) {
 		case HYDRATE:
 			return { ...state, ...action.payload };
@@ -31,6 +31,4 @@ export default function shopReducer (state = INITIAL_STATE, action) {
 		default:
 			return state;
 	}
-};
-
- 
+}

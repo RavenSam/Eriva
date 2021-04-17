@@ -31,3 +31,7 @@
 .bdf {
 	backdrop-filter: blur(8px);
 }
+
+.shadow-1{
+	box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
