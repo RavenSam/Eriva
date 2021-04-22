@@ -4,8 +4,8 @@ import Magnifier from "react-magnifier";
 
 import SliderGallery from "./Gallery/SliderGallery";
 
-export default function ProductGallery({ gallery }) {
-	const [hovered, setHovered] = useState(gallery[0].src);
+export default function ProductGallery({ product }) {
+	const [hovered, setHovered] = useState(product.image);
 
 	const changeFeatured = (src) => setHovered(src);
 
@@ -17,7 +17,9 @@ export default function ProductGallery({ gallery }) {
 				</div>
 
 				<div className="flex items-center">
+				{product.gallery &&
 					<SliderGallery gallery={gallery} changeFeatured={changeFeatured} hovered={hovered} />
+				}
 				</div>
 			</div>
 		</>

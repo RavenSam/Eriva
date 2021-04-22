@@ -7,7 +7,7 @@ export default function ProductDetails({ product }) {
 	return (
 		<SimpleGrid columns={[1, null, null, 2]} spacing="10px">
 			<Box minH="100px">
-				<ProductGallery gallery={product.gallery} />
+				<ProductGallery product={product} />
 			</Box>
 
 			<Box minH="100px">
