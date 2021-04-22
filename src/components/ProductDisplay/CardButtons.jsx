@@ -37,7 +37,7 @@ export default function CardButtons({ product, hovered, setHovered,setMOpen }) {
 						<button
 							onClick={() => handleAdd(product.id)}
 							aria-label="add to card"
-							className="bg-primary-600 rounded-full w-10 h-10 text-white mb-2 focus:outline-none"
+							className="bg-primary-600 opacity-80 hover:opacity-100 rounded-full w-10 h-10 text-white mb-2 focus:outline-none"
 						>
 							<ShoppingCartOutline className="mx-auto" />
 						</button>
@@ -46,7 +46,7 @@ export default function CardButtons({ product, hovered, setHovered,setMOpen }) {
 
 						<button
 							aria-label="white list"
-							className="bg-primary-600 rounded-full w-10 h-10 text-white mb-2 focus:outline-none "
+							className="bg-primary-600  opacity-80 hover:opacity-100  rounded-full w-10 h-10 text-white mb-2 focus:outline-none "
 						>
 							<HeartOutline className="mx-auto" />
 						</button>

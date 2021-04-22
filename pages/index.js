@@ -7,12 +7,11 @@ import SlideCards from "@components/Sections/SlideCards";
 import ProductCard from "@components/ProductDisplay/ProductCard";
 
 // Dummy Data
-import { collections, showcases } from "dummyData";
+import { collections, showcases,products } from "dummyData";
 
 export default function Home({ data }) {
   // const { products } = useSelector((state) => state.shop);
 
-  console.log(data);
   return (
     <>
       <SliderImage items={showcases} />
@@ -29,11 +28,13 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps(context) {
-  const data = await (await fetch("https://fakestoreapi.com/products")).json();
+  // const data = await (await fetch("https://fakestoreapi.com/products")).json();
+
+
 
   return {
     props: {
-      data,
+      data:products,
     },
   };
 }

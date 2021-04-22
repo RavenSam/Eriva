@@ -19,11 +19,11 @@ export default function Productcard({ product }) {
 				onMouseLeave={() => !mOpen && isLargerThan850 && setHovered(false)}
 				className="text-center max-w-md relative mx-auto"
 			>
-				<figure className="w-full featuredImage">
+				<figure style={{maxWidth:"12rem"}} className="w-full featuredImage mx-auto">
 					<Image
 						src={product.image}
-						width="200"
-						height="300"
+						width="400"
+						height="500"
 						className="object-contain object-bottom"
 					/>
 				</figure>

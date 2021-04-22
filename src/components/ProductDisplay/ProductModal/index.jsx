@@ -9,9 +9,11 @@ import {
 	ModalBody,
 	ModalCloseButton,
 	useDisclosure,
+	useMediaQuery,
 } from "@chakra-ui/react";
 
 export default function ProductModal({ product, setHovered, setMOpen }) {
+	const [isLargerThan850] = useMediaQuery("(min-width: 850px)");
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	const handleOpen = () => {
@@ -21,8 +23,10 @@ export default function ProductModal({ product, setHovered, setMOpen }) {
 
 	const handleClose = () => {
 		setMOpen(false);
-		setHovered(false)
 		onClose();
+		if (isLargerThan850) {
+			setHovered(false);
+		}
 	};
 
 	return (
@@ -30,7 +34,7 @@ export default function ProductModal({ product, setHovered, setMOpen }) {
 			<button
 				onClick={handleOpen}
 				aria-label="quick view"
-				className="bg-primary-600 rounded-full w-10 h-10 text-white mb-2 focus:outline-none"
+				className="bg-primary-600  opacity-80 hover:opacity-100  rounded-full w-10 h-10 text-white mb-2 focus:outline-none"
 			>
 				<ArrowsExpandOutline className="mx-auto" />
 			</button>

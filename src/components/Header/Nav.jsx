@@ -9,7 +9,7 @@ export default function Nav({ links }) {
       <nav className="hidden relative md:flex items-center">
         {links.map((link) => (
           <Fragment key={link.label}>
-            {link.child.length ? (
+            {link.child && link.child?.length ? (
               <LinkParent link={link} />
             ) : (
               <Link href={link.href}>

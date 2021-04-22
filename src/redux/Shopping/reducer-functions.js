@@ -8,7 +8,7 @@ export const addToTheCart = (state, action) => {
 	return {
 		...state,
 		cart: inCart
-			? state.cart.map((item) => (item.id === action.payload.id ? { id:item.id, qty: item.qty + 1 } : item))
+			? state.cart.map((item) => (item.id === action.payload.id ? {id:item.id, qty: item.qty + 1 } : item))
 			: [...state.cart, { id:action.payload.id, qty: 1 }],
 	};
 };
